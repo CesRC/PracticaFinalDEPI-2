@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { User } from "../../models/user.models"; 
+import { UserService } from "../../services/user.services";
+
 /**
  * Generated class for the UserProfilePage page.
  *
@@ -15,11 +18,24 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class UserProfilePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  users: User[]=[];
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private UserService: UserService ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad UserProfilePage');
+  }
+
+  onLoadNewPage(){
+  }
+
+  ionViewWillEnter(){
+    this.users=this.UserService.getUsers();
+  }
+
+  onItemTapped($event, users){
+    
   }
 
 }

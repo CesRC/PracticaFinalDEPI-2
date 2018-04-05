@@ -13,9 +13,9 @@ import { AddPatientPage } from '../pages/add-patient/add-patient';
 import { EditPatientPage } from '../pages/edit-patient/edit-patient';
 import { UserProfilePage } from '../pages/user-profile/user-profile';
 
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { UserService } from '../services/user.services';
 
 @NgModule({
   declarations: [
@@ -46,6 +46,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     UserProfilePage
   ],
   providers: [
+    UserService,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
