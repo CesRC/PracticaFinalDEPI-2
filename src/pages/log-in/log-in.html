@@ -10,12 +10,34 @@
     <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>logIn</ion-title>
+    <ion-title>Log In</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content text-center padding>
+  
+    <ion-img  width="200" height="200" src="../../assets/imgs/appIcon.png">
+    </ion-img>
+
+    <form #loginForm="ngForm" (ngSubmit)="login()" autocomplete="off">
+      
+          <ion-list inset>
+            <ion-item>
+              <ion-input text-center placeholder="Email" name="user" id="userField" type="text" required [(ngModel)]="user" #email></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input text-center  placeholder="Password" name="password" id="passwordField" type="password" required [(ngModel)]="password"></ion-input>
+            </ion-item>
+          </ion-list>
+   
+
+          <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+          <button ion-button class="submit-btn" full type="submit" [disabled]="!loginForm.form.valid">Login
+          </button>
+
+    </form>
+  
 
 </ion-content>

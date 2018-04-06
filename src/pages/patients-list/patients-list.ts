@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { AddPatientPage } from '../../pages/add-patient/add-patient';
+
 /**
  * Generated class for the PatientsListPage page.
  *
@@ -20,6 +22,10 @@ export class PatientsListPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PatientsListPage');
+  }
+
+  onLoadAddPatient(){
+    this.navCtrl.push(AddPatientPage);
   }
 
 }
