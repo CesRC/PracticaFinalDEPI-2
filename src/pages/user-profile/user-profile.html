@@ -6,9 +6,12 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>userProfile</ion-title>
-  </ion-navbar>
+    <ion-navbar color="secondary">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Mi Perfil</ion-title>
+      </ion-navbar>
 
 </ion-header>
 
@@ -19,8 +22,8 @@
         (click)="onItemTapped($event, contact)">
          
         <p>{{contact.nombre}}</p>
-        <p>{{contact.apelido}}</p>
-        <p>{{contact.nascimento}}</p>
+        <p>{{contact.apellido}}</p>
+        <p>{{contact.nacimiento}}</p>
         <p>{{contact.nacionalidad}}</p>
         <p>{{contact.rol}}</p>
         <p>{{contact.correo}}</p>

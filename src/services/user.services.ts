@@ -1,6 +1,6 @@
 import { User } from "../models/user.models"; 
 export class UserService{
-    private users: User []= [{"nombre":"Lorenzo","apelido":"Melis","nascimento":"21/06/1992",
+    private users: User []= [{"nombre":"Lorenzo","apellido":"Melis","nacimiento":"21/06/1992",
     "nacionalidad":"Italia","rol":"Enfermero","correo":""}];
     
     constructor(){ 

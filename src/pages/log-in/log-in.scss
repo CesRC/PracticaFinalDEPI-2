@@ -1,3 +1,5 @@
 page-log-in {
-
+    ion-content .scroll-content {
+        overflow : hidden !important;
+    }
 }

@@ -6,13 +6,107 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>patientDisplay</ion-title>
+  <ion-navbar color="secondary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Visualización de pacientes</ion-title>
   </ion-navbar>
-
 </ion-header>
+<ion-content padding id ="VerPacientes">
+    <!--<div class = "row">
+        <div class = "col">
+            <ion-img width="90" height="90" src="assets/imgs/logo.png"></ion-img>
+        </div>
+        <div class = "col">
+            <ion-item>
+                <ion-label class="my-item-list">Nombre</ion-label>
+                <ion-input class="my-item-list" type="text" placeholder="Texto"></ion-input>
+              </ion-item>
+        </div>
+        <div class = "col">
+            <ion-item>
+                <ion-label class="my-item-list">Nombre</ion-label>
+                <ion-input class="my-item-list" type="text" placeholder="Texto"></ion-input>
+              </ion-item>
+        </div>
+        <div class = "col">
+            <ion-item>
+                <ion-label class="my-item-list">Nombre</ion-label>
+                <ion-input class="my-item-list" type="text" placeholder="Texto"></ion-input>
+              </ion-item>
+        </div>
+        <div class = "col">
+            <ion-item>
+                <ion-label class="my-item-list">Nombre</ion-label>
+                <ion-input class="my-item-list" type="text" placeholder="Texto"></ion-input>
+              </ion-item>
+        </div>
+     </div>-->
 
+  <ion-img width="90" height="90" src="assets/imgs/logo.png"></ion-img>
+  <ion-list>
+    <ion-item class="personal-list">
+      <ion-label class="my-item-list">Nombre</ion-label>
+      <ion-input class="my-item-list" type="text" placeholder="Texto"></ion-input>
+    </ion-item>
 
-<ion-content padding>
+    <ion-item>
+        <ion-label class="my-item-list">DNI</ion-label>
+        <ion-input class="my-item-list" type="text" placeholder="Texto"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label class="my-item-list">Estado Civil</ion-label>
+        <ion-input class="my-item-list" type="text" placeholder="Texto"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label class="my-item-list">Sexo</ion-label>
+        <ion-input class="my-item-list" type="text" placeholder="Texto"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label class="my-item-list">Edad</ion-label>
+        <ion-input class="my-item-list" type="number" placeholder="Texto"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label class="my-item-list">Lugar de nacimiento</ion-label>
+        <ion-input class="my-item-list" type="text" placeholder="Texto"></ion-input>
+  </ion-item>
+  </ion-list>
+  
+  <!--
+  <ion-list>
+    <ion-item>
+      <ion-label>Enfermedades</ion-label>
+      <ion-input type="text" placeholder="Texto"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Patologías</ion-label>
+        <ion-input type="text" placeholder="Texto"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Alergias</ion-label>
+        <ion-input type="text" placeholder="Texto"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Medicamentos</ion-label>
+        <ion-input type="text" placeholder="Texto"></ion-input>
+    </ion-item>
+  </ion-list>
+-->
+
+  <button ion-button icon-start>
+    <ion-icon name ="start"></ion-icon>
+    Agregar
+  </button>
+
+  <button ion-button icon-end>
+      <ion-icon name ="start"></ion-icon>
+      Cancelar
+    </button>
 
 </ion-content>

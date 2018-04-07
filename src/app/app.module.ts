@@ -4,7 +4,6 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 
 import { LogInPage } from '../pages/log-in/log-in';
 import { PatientsListPage } from '../pages/patients-list/patients-list';
@@ -21,7 +20,6 @@ import { UserService } from '../services/user.services';
   declarations: [
     MyApp,
     HomePage,
-    ListPage,
     LogInPage,
     PatientsListPage,
     PatientDisplayPage,
@@ -37,7 +35,6 @@ import { UserService } from '../services/user.services';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,
     LogInPage,
     PatientsListPage,
     PatientDisplayPage,

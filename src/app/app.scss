@@ -14,3 +14,16 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+.my-menu{
+    background: #A9F5A9;
+    color:#fff !important;
+   }
+
+.my-list-item{
+    background: #A9F5A9 !important;
+    color:black !important;
+    border:#209e46 !important;
+   }
+ion-menu .scroll-content{
+    overflow-y: auto; // or "overflow: auto;"
+}
