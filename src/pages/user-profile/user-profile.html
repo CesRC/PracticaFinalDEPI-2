@@ -16,8 +16,7 @@
 </ion-header>
 
 
-<ion-content padding>
-    <ion-list>
+<ion-content padding id ="MiPerfil">
         <!-- <button ion-item *ngfor="let contact of contacts"
         (click)="onItemTapped($event, contact)">
          
@@ -28,6 +27,14 @@
         <p>{{contact.rol}}</p>
         <p>{{contact.correo}}</p>
         -->
+        <div align= "center" class="my-img"><ion-img width="90" height="90"  align="center" src="assets/imgs/logo.png"></ion-img></div>
+        <ion-list>
+            <p class= "personal-list"><strong>Nombre:</strong></p>
+            <p class= "personal-list"><strong>Apellido:</strong></p>
+            <p class= "personal-list"><strong>Nacimiento:</strong></p>
+            <p class= "personal-list"><strong>Nacionalidad:</strong></p>
+            <p class= "personal-list"><strong>Rol:</strong></p>
+            <p class= "personal-list"><strong>Correo:</strong></p>
       </ion-list>
 
 </ion-content>
