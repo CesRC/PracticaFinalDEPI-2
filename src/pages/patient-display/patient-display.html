@@ -18,7 +18,7 @@
     <ion-list>
       <!--<button ion-item *ngFor="let patient of patients" (click)="onItemTapped()">-->
       <!--<button ion-item *ngFor="let contact of contacts" (click)="openActionSheetController()" class="button">-->
-        <p class= "personal-list"><strong>Nombre: </strong>Andres</p>
+        <p class= "personal-list"><strong>Nombre: </strong>Francisco Alonso Quiroga</p>
         <p class= "personal-list"><strong>DNI: </strong>12345678A<strong> &nbsp;&nbsp;&nbsp;Código: </strong>66666</p>
         <p class= "personal-list"><strong>Sexo: </strong>H<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Edad: </strong>26</p>
         <p class= "personal-list"><strong>Enfermedades: </strong>Tuberculosis</p>
@@ -27,10 +27,8 @@
       <!--</button>-->
     </ion-list>
     <div align= "center">
-        <button ion-button icon-start>
-            <ion-icon name ="start"></ion-icon>Agregar</button>
-        <button ion-button icon-end>
-            <ion-icon name ="start"></ion-icon>Cancelar</button>
+        <button ion-button icon-end (click)="onModifyPatient()">
+            <ion-icon name ="modificar"></ion-icon>Modificar</button>
     </div>
 
 
