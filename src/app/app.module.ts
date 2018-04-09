@@ -15,6 +15,7 @@ import { UserProfilePage } from '../pages/user-profile/user-profile';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { UserService } from '../services/user.services';
+import { PatientService } from '../services/patient.service';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { UserService } from '../services/user.services';
     UserService,
     StatusBar,
     SplashScreen,
+    PatientService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

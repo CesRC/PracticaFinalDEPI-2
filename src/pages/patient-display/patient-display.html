@@ -14,99 +14,24 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id ="VerPacientes">
-    <!--<div class = "row">
-        <div class = "col">
-            <ion-img width="90" height="90" src="assets/imgs/logo.png"></ion-img>
-        </div>
-        <div class = "col">
-            <ion-item>
-                <ion-label class="my-item-list">Nombre</ion-label>
-                <ion-input class="my-item-list" type="text" placeholder="Texto"></ion-input>
-              </ion-item>
-        </div>
-        <div class = "col">
-            <ion-item>
-                <ion-label class="my-item-list">Nombre</ion-label>
-                <ion-input class="my-item-list" type="text" placeholder="Texto"></ion-input>
-              </ion-item>
-        </div>
-        <div class = "col">
-            <ion-item>
-                <ion-label class="my-item-list">Nombre</ion-label>
-                <ion-input class="my-item-list" type="text" placeholder="Texto"></ion-input>
-              </ion-item>
-        </div>
-        <div class = "col">
-            <ion-item>
-                <ion-label class="my-item-list">Nombre</ion-label>
-                <ion-input class="my-item-list" type="text" placeholder="Texto"></ion-input>
-              </ion-item>
-        </div>
-     </div>-->
+    <div align= "center" class="my-img"><ion-img width="90" height="90"  align="center" src="assets/imgs/logo.png"></ion-img></div>
+    <ion-list>
+      <!--<button ion-item *ngFor="let patient of patients" (click)="onItemTapped()">-->
+      <!--<button ion-item *ngFor="let contact of contacts" (click)="openActionSheetController()" class="button">-->
+        <p class= "personal-list"><strong>Nombre: </strong>Andres</p>
+        <p class= "personal-list"><strong>DNI: </strong>12345678A<strong> &nbsp;&nbsp;&nbsp;Código: </strong>66666</p>
+        <p class= "personal-list"><strong>Sexo: </strong>H<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Edad: </strong>26</p>
+        <p class= "personal-list"><strong>Enfermedades: </strong>Tuberculosis</p>
+        <p class= "personal-list"><strong>Alergias: </strong>Frutos secos</p>
+        <p class= "personal-list"><strong>Medicamento: </strong>Algidol</p>
+      <!--</button>-->
+    </ion-list>
+    <div align= "center">
+        <button ion-button icon-start>
+            <ion-icon name ="start"></ion-icon>Agregar</button>
+        <button ion-button icon-end>
+            <ion-icon name ="start"></ion-icon>Cancelar</button>
+    </div>
 
-  <ion-img width="90" height="90" src="assets/imgs/logo.png"></ion-img>
-  <ion-list>
-    <ion-item class="personal-list">
-      <ion-label class="my-item-list">Nombre</ion-label>
-      <ion-input class="my-item-list" type="text" placeholder="Texto"></ion-input>
-    </ion-item>
-
-    <ion-item>
-        <ion-label class="my-item-list">DNI</ion-label>
-        <ion-input class="my-item-list" type="text" placeholder="Texto"></ion-input>
-    </ion-item>
-
-    <ion-item>
-        <ion-label class="my-item-list">Estado Civil</ion-label>
-        <ion-input class="my-item-list" type="text" placeholder="Texto"></ion-input>
-    </ion-item>
-
-    <ion-item>
-        <ion-label class="my-item-list">Sexo</ion-label>
-        <ion-input class="my-item-list" type="text" placeholder="Texto"></ion-input>
-    </ion-item>
-    <ion-item>
-        <ion-label class="my-item-list">Edad</ion-label>
-        <ion-input class="my-item-list" type="number" placeholder="Texto"></ion-input>
-    </ion-item>
-    <ion-item>
-        <ion-label class="my-item-list">Lugar de nacimiento</ion-label>
-        <ion-input class="my-item-list" type="text" placeholder="Texto"></ion-input>
-  </ion-item>
-  </ion-list>
-  
-  <!--
-  <ion-list>
-    <ion-item>
-      <ion-label>Enfermedades</ion-label>
-      <ion-input type="text" placeholder="Texto"></ion-input>
-    </ion-item>
-
-    <ion-item>
-        <ion-label>Patologías</ion-label>
-        <ion-input type="text" placeholder="Texto"></ion-input>
-    </ion-item>
-
-    <ion-item>
-        <ion-label>Alergias</ion-label>
-        <ion-input type="text" placeholder="Texto"></ion-input>
-    </ion-item>
-
-    <ion-item>
-        <ion-label>Medicamentos</ion-label>
-        <ion-input type="text" placeholder="Texto"></ion-input>
-    </ion-item>
-  </ion-list>
--->
-
-  <button ion-button icon-start>
-    <ion-icon name ="start"></ion-icon>
-    Agregar
-  </button>
-
-  <button ion-button icon-end>
-      <ion-icon name ="start"></ion-icon>
-      Cancelar
-    </button>
 
 </ion-content>
