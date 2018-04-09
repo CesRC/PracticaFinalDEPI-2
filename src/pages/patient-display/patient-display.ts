@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Patient } from '../../models/patient.model';
 import { PatientService } from '../../services/patient.service';
 import { importType } from '@angular/compiler/src/output/output_ast';
+import { EditPatientPage } from '../edit-patient/edit-patient';
 
 /**
  * Generated class for the PatientDisplayPage page.
@@ -28,5 +29,9 @@ export class PatientDisplayPage {
 
   ionViewWillEnter(){
     this.pacientes= this.PatientService.getPatient();
+  }
+  
+  onModifyPatient(){
+    this.navCtrl.push(EditPatientPage);
   }
 }

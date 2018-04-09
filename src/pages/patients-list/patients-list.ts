@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { AddPatientPage } from '../../pages/add-patient/add-patient';
+import { PatientDisplayPage } from '../patient-display/patient-display';
 
 /**
  * Generated class for the PatientsListPage page.
@@ -26,6 +27,10 @@ export class PatientsListPage {
 
   onLoadAddPatient(){
     this.navCtrl.push(AddPatientPage);
+  }
+
+  buttonOnClick(){
+    this.navCtrl.push(PatientDisplayPage);
   }
 
 }

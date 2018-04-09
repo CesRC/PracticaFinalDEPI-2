@@ -6,13 +6,66 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>addPatient</ion-title>
-  </ion-navbar>
+    <ion-navbar color="secondary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Añadir Paciente</ion-title>
+    </ion-navbar>
+  </ion-header>
 
-</ion-header>
+  <ion-content padding id ="AñadirPacientes">
+      <form (ngSubmit)="onAddPatient(f.value)" #f="ngForm">
+          <ion-list>
+              <ion-item>
+                <ion-label>Nombre</ion-label>
+                <ion-input type="text" placeholder="Nombre" name="nombre" ngModel required></ion-input>
+              </ion-item>
+      
+              <ion-item>
+                <ion-label>DNI</ion-label>
+                <ion-input type="text" placeholder="Organización" name="DNI" ngModel required></ion-input>
+              </ion-item>
+      
+              <ion-item>
+                <ion-label>Código Id</ion-label>
+                <ion-input type="number" placeholder="12345" name="movil" ngModel></ion-input>
+              </ion-item>
+      
+              <ion-item>
+                <ion-label>Sexo</ion-label>
+                <ion-input type="text" placeholder="H o M" name="sexo" ngModel></ion-input>
+              </ion-item>
 
+              <ion-item>
+                <ion-label>Edad</ion-label>
+                <ion-input type="number" name="edad" ngModel></ion-input>
+              </ion-item>
+              
+              <ion-item>
+                <ion-label>Lugar de nacimiento</ion-label>
+                <ion-input type="text" placeholder="Madrid" name="lugarnacimiento" ngModel></ion-input>
+              </ion-item>
 
-<ion-content padding>
+              <ion-item>
+                <ion-label>Enfermedades</ion-label>
+                <ion-input type="text" placeholder="Gripe" name="enfermedades" ngModel></ion-input>
+              </ion-item>
 
-</ion-content>
+              <ion-item>
+                <ion-label>Alergias</ion-label>
+                <ion-input type="text" placeholder="Lactosa" name="alergias" ngModel></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-label>Medicamentos</ion-label>
+                  <ion-input type="text" placeholder="Aspirina" name="medicamentos" ngModel></ion-input>
+              </ion-item>
+          
+          </ion-list>
+          <div align="center">
+            <button ion-button type= "submit" [disabled]= "!f.valid" (click)="onLoadAddPatient()">Agregar</button>
+            <button ion-button type= "button" [disabled]= "!f.valid">Cancelar</button>
+          </div>
+      </form>
+  </ion-content>
+  

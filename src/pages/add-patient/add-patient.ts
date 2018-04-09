@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Patient } from '../../models/patient.model';
+import { PatientService } from '../../services/patient.service';
+import { PatientsListPage } from '../patients-list/patients-list';
 
 /**
  * Generated class for the AddPatientPage page.
@@ -15,11 +18,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AddPatientPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private patientService: PatientService) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddPatientPage');
   }
 
+  onAddPatient(value: Patient){
+    this.patientService.addPatient(value);
+    this.navCtrl.pop();
+  }
+  onLoadAddPatient(){
+    this.navCtrl.push(PatientsListPage);
+  }
 }
