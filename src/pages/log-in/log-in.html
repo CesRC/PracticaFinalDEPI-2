@@ -21,23 +21,24 @@
     <ion-img  width="200" height="200" src="../../assets/imgs/appIcon.png">
     </ion-img>
 
-    <form #loginForm="ngForm" (ngSubmit)="login()" autocomplete="off">
-      
-          <ion-list inset>
+    <form [formGroup]="myForm" (ngSubmit)="loginUser()">
+          <ion-list>
             <ion-item>
-              <ion-input text-center placeholder="Email" name="user" id="userField" type="text" required [(ngModel)]="user" #email></ion-input>
+              <ion-label stacked>Usuario:</ion-label>
+              <ion-input formControlName="email" type="text" placeholder="lucas@example.com"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input text-center  placeholder="Password" name="password" id="passwordField" type="password" required [(ngModel)]="password"></ion-input>
+              <ion-label stacked>Contraseña:</ion-label>
+              <ion-input formControlName="password" type="password" placeholder="Contraseña"></ion-input>
             </ion-item>
           </ion-list>
-   
-
-          <div *ngIf="error" class="alert alert-danger">{{error}}</div>
-          <button ion-button class="submit-btn" full type="submit" [disabled]="!loginForm.form.valid">Login
-          </button>
-
-    </form>
-  
-
-</ion-content>
+          <div padding>
+            <button ion-button block type="submit" [disabled]="!myForm.valid">Ingresar</button>
+          </div>
+        </form>
+        <div text-center>
+          <a ion-button block clear (click)="goToSignup()">
+            Nueva cuenta
+          </a>
+        </div>
+        </ion-content>

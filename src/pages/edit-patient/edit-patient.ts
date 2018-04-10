@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, } from 'ionic-angular';
+import { PatientService } from '../../services/patient.service';
+import { Patient } from '../../models/patient.model';
+import { PatientsListPage } from '../patients-list/patients-list';
 
 /**
  * Generated class for the EditPatientPage page.
@@ -15,11 +18,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class EditPatientPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private patientService: PatientService) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EditPatientPage');
   }
 
+  onEditPatient(value: Patient){
+    this.patientService.addPatient(value);
+    this.navCtrl.pop();
+  }
+  onLoadEditPatient(){
+    this.navCtrl.push(PatientsListPage);
+  }
 }

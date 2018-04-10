@@ -11,6 +11,7 @@ import { PatientDisplayPage } from '../pages/patient-display/patient-display';
 import { AddPatientPage } from '../pages/add-patient/add-patient';
 import { EditPatientPage } from '../pages/edit-patient/edit-patient';
 import { UserProfilePage } from '../pages/user-profile/user-profile';
+import { RegisterPage } from '../pages/register/register';
 
 @Component({
   templateUrl: 'app.html'

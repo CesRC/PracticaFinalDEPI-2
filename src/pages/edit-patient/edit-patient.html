@@ -6,13 +6,36 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>editPatient</ion-title>
+  <ion-navbar color="secondary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Editar Paciente</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding id ="EditarPacientes">
+  <form (ngSubmit)="onEditPatient(f.value)" #f="ngForm">
+      <ion-list>
+          <ion-item>
+            <ion-label>Enfermedades</ion-label>
+            <ion-input type="text" placeholder="Gripe" name="enfermedades" ngModel></ion-input>
+          </ion-item>
 
+          <ion-item>
+            <ion-label>Alergias</ion-label>
+            <ion-input type="text" placeholder="Lactosa" name="alergias" ngModel></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>Medicamentos</ion-label>
+              <ion-input type="text" placeholder="Aspirina" name="medicamentos" ngModel></ion-input>
+          </ion-item>
+      
+      </ion-list>
+      <div align="center">
+        <button ion-button type= "submit" [disabled]= "!f.valid" (click)="onLoadEditPatient()">Confirmar</button>
+        <button ion-button type= "button" [disabled]= "!f.valid">Cancelar</button>
+      </div>
+  </form>
 </ion-content>
