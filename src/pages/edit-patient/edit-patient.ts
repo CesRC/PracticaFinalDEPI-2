@@ -18,18 +18,46 @@ import { PatientsListPage } from '../patients-list/patients-list';
 })
 export class EditPatientPage {
 
+  patient: Patient = {
+    avatar: null,
+    nombre: '',
+    apellidos: '',
+    dni: '',
+    codigoidentificador: '',
+    sexo: '',
+    edad: '',
+    lugarnacimiento: '',
+    enfermedades: '',
+    alergias: '',
+    medicamentos: ''
+  };
+
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private patientService: PatientService) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad EditPatientPage');
+    this.patient = this.navParams.get('patient');
   }
 
-  onEditPatient(value: Patient){
-    this.patientService.addPatient(value);
-    this.navCtrl.pop();
+  // onEditPatient(value: Patient){
+  //   this.patientService.addPatient(value);
+  //   this.navCtrl.pop();
+  // }
+  // onLoadEditPatient(){
+  //   this.navCtrl.push(PatientsListPage);
+  // }
+
+  savePatient(patient: Patient){
+    this.patientService.editPatient(patient).then(()=> {
+      this.navCtrl.setRoot(PatientsListPage);
+    })
   }
-  onLoadEditPatient(){
-    this.navCtrl.push(PatientsListPage);
+
+  removePatient(patient: Patient){
+    this.patientService.removePatient(patient).then(()=> {
+      this.navCtrl.setRoot(PatientsListPage);
+    })
   }
+
 }

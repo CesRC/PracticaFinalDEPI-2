@@ -1,6 +1,10 @@
+import { Img } from "ionic-angular";
+
 export interface Patient {
     key?: string;
+    avatar: Img;
     nombre: string;
+    apellidos: string;
     dni: string;
     codigoidentificador: string;
     sexo: string;

@@ -13,13 +13,19 @@ import { EditPatientPage } from '../pages/edit-patient/edit-patient';
 import { UserProfilePage } from '../pages/user-profile/user-profile';
 import { RegisterPage} from '../pages/register/register';
 
+import { PatientService } from '../services/patient.service';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { UserService } from '../services/user.services';
-import { PatientService } from '../services/patient.service';
+
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { PatientsListPageModule } from '../pages/patients-list/patients-list.module';
+import { EditPatientPageModule } from '../pages/edit-patient/edit-patient.module';
+import { AddPatientPageModule } from '../pages/add-patient/add-patient.module';
+import { PatientDisplayPageModule } from '../pages/patient-display/patient-display.module';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyCiZTX5fBGsCgrjDtPxmrM6BYPPUZRay74",
@@ -35,10 +41,6 @@ export const firebaseConfig = {
     MyApp,
     HomePage,
     LogInPage,
-    PatientsListPage,
-    PatientDisplayPage,
-    AddPatientPage,
-    EditPatientPage,
     UserProfilePage,
     RegisterPage
   ],
@@ -47,7 +49,11 @@ export const firebaseConfig = {
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig,'practica-final-depi'),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    PatientsListPageModule,
+    AddPatientPageModule,
+    EditPatientPageModule,
+    PatientDisplayPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

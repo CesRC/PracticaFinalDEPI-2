@@ -10,32 +10,27 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Editar Paciente</ion-title>
+    <ion-title>{{patient?.nombre}}{{patient?.apellidos}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 
-<ion-content padding id ="EditarPacientes">
-  <form (ngSubmit)="onEditPatient(f.value)" #f="ngForm">
-      <ion-list>
-          <ion-item>
-            <ion-label>Enfermedades</ion-label>
-            <ion-input type="text" placeholder="Gripe" name="enfermedades" ngModel></ion-input>
-          </ion-item>
+<ion-content padding>
+    <ion-item>
+      <ion-label>Enfermedades</ion-label>
+      <ion-input type="text" [(ngModel)]= "patient.enfermedades" placeholder="Hepatitis C"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Alergias</ion-label>
+      <ion-input type="text" [(ngModel)]= "patient.alergias" placeholder="Lactosa"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Medicamentos</ion-label>
+      <ion-input type="text" [(ngModel)]= "patient.medicamentos" placeholder="Aspirina"></ion-input>
+    </ion-item>
 
-          <ion-item>
-            <ion-label>Alergias</ion-label>
-            <ion-input type="text" placeholder="Lactosa" name="alergias" ngModel></ion-input>
-          </ion-item>
-          <ion-item>
-              <ion-label>Medicamentos</ion-label>
-              <ion-input type="text" placeholder="Aspirina" name="medicamentos" ngModel></ion-input>
-          </ion-item>
-      
-      </ion-list>
-      <div align="center">
-        <button ion-button type= "submit" [disabled]= "!f.valid" (click)="onLoadEditPatient()">Confirmar</button>
-        <button ion-button type= "button" [disabled]= "!f.valid">Cancelar</button>
+    <div align="center">
+        <button ion-button block full (click)="savePatient(patient)">Guardar</button>
+        <button ion-button block full color="danger" (click)="removePatient(patient)">Eliminar</button>
       </div>
-  </form>
 </ion-content>

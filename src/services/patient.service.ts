@@ -1,19 +1,29 @@
 import {Patient} from "../models/patient.model";
+import { Injectable } from "@angular/core";
+import { AngularFireDatabase } from "angularfire2/database";
+
+@Injectable()
 export class PatientService{
     
-    private pacientes: Patient []=
-    [{"nombre": "Andres", "dni": "12345678A", "codigoidentificador": "66666", "sexo":"H", "edad":"26", "lugarnacimiento":"Madrid",
-     "enfermedades":"Tuberculosis", "alergias":"Frutos secos", "medicamentos":"Algidol"}];
+    private patientListRef = this.db.list<Patient>('patient');
     
-    constructor(){
+    constructor(private db: AngularFireDatabase){
     }
 
-    addPatient(paciente: Patient){
-        this.pacientes.push(paciente);
+    getPatientList(){
+        return this.patientListRef;
     }
 
-    getPatient(){
-        return this.pacientes;
+    addPatient(patient: Patient){
+        return this.patientListRef.push(patient);
+    }
+
+    editPatient (patient: Patient){
+        return this.patientListRef.update(patient.key, patient);
+    }
+
+    removePatient (patient: Patient){
+        return this.patientListRef.remove(patient.key);
     }
 
 

@@ -1,15 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
 import { AddPatientPage } from '../../pages/add-patient/add-patient';
 import { PatientDisplayPage } from '../patient-display/patient-display';
-
-/**
- * Generated class for the PatientsListPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { Observable } from 'rxjs/Observable';
+import { Patient } from '../../models/patient.model';
+import { PatientService } from '../../services/patient.service';
 
 @IonicPage()
 @Component({
@@ -18,19 +13,21 @@ import { PatientDisplayPage } from '../patient-display/patient-display';
 })
 export class PatientsListPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  patientList: Observable<Patient[]>
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private patientService: PatientService) {
+    this.patientList= this.patientService.getPatientList().snapshotChanges().map(
+      changes => {
+        return changes.map(c => ({
+          key: c.payload.key, 
+          ...c.payload.val(),
+          }))
+        });
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PatientsListPage');
   }
 
-  onLoadAddPatient(){
-    this.navCtrl.push(AddPatientPage);
-  }
-
-  buttonOnClick(){
-    this.navCtrl.push(PatientDisplayPage);
-  }
 
 }

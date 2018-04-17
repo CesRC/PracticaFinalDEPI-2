@@ -1,9 +1,4 @@
-<!--
-  Generated template for the PatientDisplayPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar color="secondary">
@@ -13,23 +8,23 @@
     <ion-title>Visualización de pacientes</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding id ="VerPacientes">
-    <div align= "center" class="my-img"><ion-img width="90" height="90"  align="center" src="assets/imgs/logo.png"></ion-img></div>
-    <ion-list>
-      <!--<button ion-item *ngFor="let patient of patients" (click)="onItemTapped()">-->
-      <!--<button ion-item *ngFor="let contact of contacts" (click)="openActionSheetController()" class="button">-->
-        <p class= "personal-list"><strong>Nombre: </strong>Francisco Alonso Quiroga</p>
-        <p class= "personal-list"><strong>DNI: </strong>12345678A<strong> &nbsp;&nbsp;&nbsp;Código: </strong>66666</p>
-        <p class= "personal-list"><strong>Sexo: </strong>H<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Edad: </strong>26</p>
-        <p class= "personal-list"><strong>Enfermedades: </strong>Tuberculosis</p>
-        <p class= "personal-list"><strong>Alergias: </strong>Frutos secos</p>
-        <p class= "personal-list"><strong>Medicamento: </strong>Algidol</p>
-      <!--</button>-->
-    </ion-list>
-    <div align= "center">
-        <button ion-button icon-end (click)="onModifyPatient()">
-            <ion-icon name ="modificar"></ion-icon>Modificar</button>
-    </div>
 
 
+<ion-content padding>
+  <div align= "center" class="my-img"><ion-img width="90" height="90"  align="center" src="assets/imgs/logo.png"></ion-img></div>
+  <ion-list>
+    <p class= "personal-list"><strong>Nombre: </strong>{{patient.nombre}}</p>
+    <p class= "personal-list"><strong>Apellidos: </strong>{{patient.apellidos}}</p>
+    <p class= "personal-list"><strong>DNI: </strong>{{patient.dni}}</p>
+    <p class= "personal-list"><strong>Código ID: </strong>{{patient.codigoidentificador}}</p>
+    <p class= "personal-list"><strong>Sexo: </strong>{{patient.sexo}}</p>
+    <p class= "personal-list"><strong>Edad: </strong>{{patient.edad}}</p>
+    <p class= "personal-list"><strong>Lugar de nacimiento: </strong>{{patient.lugarnacimiento}}</p>
+    <p class= "personal-list"><strong>Enfermedades: </strong>{{patient.enfermedades}}</p>
+    <p class= "personal-list"><strong>Alergias: </strong>{{patient.alergias}}</p>
+    <p class= "personal-list"><strong>Medicamentos: </strong>{{patient.medicamentos}}</p>
+  </ion-list>
+  <div align="center">
+      <button ion-button block full [navPush]="EditPush" [navParams]="{patient:patient}">Editar</button>
+  </div>
 </ion-content>
