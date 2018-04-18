@@ -5,16 +5,14 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Visualización de pacientes</ion-title>
+    <ion-title>{{patient?.nombre}} {{patient?.apellidos}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
-  <div align= "center" class="my-img"><ion-img width="90" height="90"  align="center" src="assets/imgs/logo.png"></ion-img></div>
+  <div align= "center" ><img class="profile-photo" src={{patient.avatar}}></div>
   <ion-list>
-    <p class= "personal-list"><strong>Nombre: </strong>{{patient.nombre}}</p>
-    <p class= "personal-list"><strong>Apellidos: </strong>{{patient.apellidos}}</p>
     <p class= "personal-list"><strong>DNI: </strong>{{patient.dni}}</p>
     <p class= "personal-list"><strong>Código ID: </strong>{{patient.codigoidentificador}}</p>
     <p class= "personal-list"><strong>Sexo: </strong>{{patient.sexo}}</p>
@@ -25,6 +23,6 @@
     <p class= "personal-list"><strong>Medicamentos: </strong>{{patient.medicamentos}}</p>
   </ion-list>
   <div align="center">
-      <button ion-button block full [navPush]="EditPush" [navParams]="{patient:patient}">Editar</button>
+      <button ion-button large full round [navPush]="EditPush" [navParams]="{patient:patient}">Editar</button>
   </div>
 </ion-content>

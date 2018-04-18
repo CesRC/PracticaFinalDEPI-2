@@ -5,9 +5,13 @@ page-patient-display {
 .my-item-list{
     font-size: 1rem;
     }
-.my-img{
+.profile-photo{
+    width:150px;
+    height:150px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
     margin-bottom: 1em;
-    }   
+}   
 .personal-list{
     margin-top: 0em;
     margin-bottom: 1em;

@@ -7,6 +7,9 @@ import { Observable } from 'rxjs/Observable';
 import { RegisterPage } from '../../pages/register/register';
 import { PatientsListPage } from '../patients-list/patients-list';
 
+ import { firebaseConfig } from "../../app/app.module";
+ import {storage, initializeApp} from 'firebase';
+
 /**
  * Generated class for the LogInPage page.
  *
@@ -27,6 +30,9 @@ export class LogInPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public formBuilder: FormBuilder,
     public afAuth: AngularFireAuth, public alertCtrl: AlertController, public loadingCtrl: LoadingController) {
+
+      initializeApp(firebaseConfig);
+      
       this.myForm = this.formBuilder.group({email: ['', Validators.required],password: ['', Validators.required]});
       this.user = afAuth.authState;
   }

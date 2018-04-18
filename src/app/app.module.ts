@@ -27,6 +27,8 @@ import { EditPatientPageModule } from '../pages/edit-patient/edit-patient.module
 import { AddPatientPageModule } from '../pages/add-patient/add-patient.module';
 import { PatientDisplayPageModule } from '../pages/patient-display/patient-display.module';
 
+import { Camera } from '@ionic-native/camera';
+
 export const firebaseConfig = {
     apiKey: "AIzaSyCiZTX5fBGsCgrjDtPxmrM6BYPPUZRay74",
     authDomain: "practica-final-depi.firebaseapp.com",
@@ -72,6 +74,7 @@ export const firebaseConfig = {
     StatusBar,
     SplashScreen,
     PatientService,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

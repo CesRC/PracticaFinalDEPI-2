@@ -1,7 +1,7 @@
 
 <ion-header>
   <ion-navbar color="secondary">
-    <ion-title>Lista de pacientes</ion-title>
+    <ion-title>Lista de Pacientes</ion-title>
     <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
     </button>
@@ -18,7 +18,7 @@
     <ion-item *ngFor="let patient of patientList | async" 
     detail-push navPush="PatientDisplayPage" [navParams]="{patient:patient}">
     <ion-avatar item-start>
-        <img src="../../assets/imgs/avatar2.png">
+        <img src={{patient.avatar}}>
       </ion-avatar>
     <p><strong>Nombre: </strong>{{patient.nombre}}</p>
     <p><strong>Apellidos: </strong>{{patient.apellidos}}</p>
