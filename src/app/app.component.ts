@@ -12,6 +12,7 @@ import { AddPatientPage } from '../pages/add-patient/add-patient';
 import { EditPatientPage } from '../pages/edit-patient/edit-patient';
 import { UserProfilePage } from '../pages/user-profile/user-profile';
 import { RegisterPage } from '../pages/register/register';
+import { ObservationPage } from '../pages/observation/observation';
 
 @Component({
   templateUrl: 'app.html'
@@ -30,6 +31,7 @@ export class MyApp {
     this.pages = [
       { title: 'Mi Perfil', component: UserProfilePage },
       { title: 'Lista de Pacientes', component: PatientsListPage },
+      { title: 'Observaciones', component: ObservationPage },
     ];
 
   }

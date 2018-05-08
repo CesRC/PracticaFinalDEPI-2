@@ -5,6 +5,7 @@ import { PatientService } from '../../services/patient.service';
 import { importType } from '@angular/compiler/src/output/output_ast';
 import { EditPatientPage } from '../edit-patient/edit-patient';
 import { Observable } from 'rxjs/Observable';
+import { AddObservationPage } from '../add-observation/add-observation';
 
 @IonicPage()
 @Component({
@@ -28,9 +29,11 @@ export class PatientDisplayPage {
   };
 
   EditPush: any;
+  ObservationPush: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private patientService: PatientService) {
     this.EditPush = EditPatientPage;
+    this.ObservationPush = AddObservationPage;
   }
 
   ionViewDidLoad() {
@@ -39,5 +42,9 @@ export class PatientDisplayPage {
 
   editPatient(){
     this.navCtrl.push(EditPatientPage);
+  }
+
+  addObservation(){
+    this.navCtrl.push(AddObservationPage);
   }
 }

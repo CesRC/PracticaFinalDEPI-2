@@ -28,6 +28,13 @@ import { AddPatientPageModule } from '../pages/add-patient/add-patient.module';
 import { PatientDisplayPageModule } from '../pages/patient-display/patient-display.module';
 
 import { Camera } from '@ionic-native/camera';
+import { ObservationService } from '../services/observation.service';
+import { ObservationPage } from '../pages/observation/observation';
+import { ObservationPageModule } from '../pages/observation/observation.module';
+import { RemoveObservationPage } from '../pages/remove-observation/remove-observation';
+import { RemoveObservationPageModule } from '../pages/remove-observation/remove-observation.module';
+import { AddObservationPage } from '../pages/add-observation/add-observation';
+import { AddObservationPageModule } from '../pages/add-observation/add-observation.module';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyDHUu70-8yFCqzlk3wZ7kn7oupdUmF1PTc",
@@ -55,7 +62,10 @@ export const firebaseConfig = {
     PatientsListPageModule,
     AddPatientPageModule,
     EditPatientPageModule,
-    PatientDisplayPageModule
+    PatientDisplayPageModule,
+    ObservationPageModule,
+    RemoveObservationPageModule,
+    AddObservationPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -67,13 +77,17 @@ export const firebaseConfig = {
     AddPatientPage,
     EditPatientPage,
     UserProfilePage,
-    RegisterPage
+    RegisterPage,
+    ObservationPage,
+    RemoveObservationPage,
+    AddObservationPage
   ],
   providers: [
     UserService,
     StatusBar,
     SplashScreen,
     PatientService,
+    ObservationService,
     Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
