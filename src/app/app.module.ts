@@ -30,12 +30,12 @@ import { PatientDisplayPageModule } from '../pages/patient-display/patient-displ
 import { Camera } from '@ionic-native/camera';
 
 export const firebaseConfig = {
-    apiKey: "AIzaSyCiZTX5fBGsCgrjDtPxmrM6BYPPUZRay74",
-    authDomain: "practica-final-depi.firebaseapp.com",
-    databaseURL: "https://practica-final-depi.firebaseio.com",
-    projectId: "practica-final-depi",
-    storageBucket: "practica-final-depi.appspot.com",
-    messagingSenderId: "82423047094"
+  apiKey: "AIzaSyDHUu70-8yFCqzlk3wZ7kn7oupdUmF1PTc",
+  authDomain: "practica-final-depi2.firebaseapp.com",
+  databaseURL: "https://practica-final-depi2.firebaseio.com",
+  projectId: "practica-final-depi2",
+  storageBucket: "practica-final-depi2.appspot.com",
+  messagingSenderId: "830328964411"
   };
 
 @NgModule({
@@ -49,7 +49,7 @@ export const firebaseConfig = {
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(firebaseConfig,'practica-final-depi'),
+    AngularFireModule.initializeApp(firebaseConfig,'practica-final-depi2'),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     PatientsListPageModule,
