@@ -40,13 +40,6 @@ export class EditPatientPage {
     this.patient = this.navParams.get('patient');
   }
 
-  // onEditPatient(value: Patient){
-  //   this.patientService.addPatient(value);
-  //   this.navCtrl.pop();
-  // }
-  // onLoadEditPatient(){
-  //   this.navCtrl.push(PatientsListPage);
-  // }
 
   savePatient(patient: Patient){
     this.patientService.editPatient(patient).then(()=> {

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Observation } from '../../models/observation.model';
 import { ObservationService } from '../../services/observation.service';
+import { Patient } from '../../models/patient.model';
 
 /**
  * Generated class for the AddObservationPage page.
@@ -17,6 +18,21 @@ import { ObservationService } from '../../services/observation.service';
 })
 export class AddObservationPage {
 
+  patient: Patient = {
+    avatar: null,
+    nombre: '',
+    apellidos: '',
+    dni: '',
+    codigoidentificador: '',
+    sexo: '',
+    edad: '',
+    lugarnacimiento: '',
+    enfermedades: '',
+    alergias: '',
+    medicamentos: ''
+  };
+
+
   observation: Observation = {
     paciente: '',
     observacion: '',
@@ -27,10 +43,11 @@ export class AddObservationPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AddObservationPage');
+    this.patient = this.navParams.get('patient');
   }
 
   addObservation(observation: Observation){
+    observation.paciente= this.patient.nombre.concat(" ").concat(this.patient.apellidos);
     this.observationService.addObservation(observation).then(ref => {
       this.navCtrl.setRoot('ObservationPage', {key: ref.key});
     })

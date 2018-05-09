@@ -4,15 +4,11 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Añadir Observación</ion-title>
+    <ion-title>{{patient?.nombre}} {{patient?.apellidos}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-        <ion-item>
-          <ion-label>Nombre Paciente: </ion-label>
-          <ion-input type="text" [(ngModel)]= "observation.paciente"></ion-input>
-        </ion-item>
         <ion-item>
           <ion-label>Observación: </ion-label>
           <ion-input type="text" [(ngModel)]= "observation.observacion"></ion-input>
